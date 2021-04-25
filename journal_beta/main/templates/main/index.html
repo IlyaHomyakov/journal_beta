@@ -8,8 +8,65 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>journal</title>
     <link rel="stylesheet" href="{% static "css/main.css" %}">
+{#    <link href="title"main#}
+{#      rel="stylesheet">#}
 </head>
 <body>
-    <h1>Главная страница</h1>
+    <div class="content">
+        <p id="title">РАСПИСАНИЕ БГМУ</p>
+        <p id="week_type_today">сегодня, 18 апреля, четная неделя</p>
+
+        <form class="search_box">
+            <input placeholder="НАЙТИ ГРУППУ" class="search_input">
+            <button class="search_btn">
+                <span class="material-icons">
+                    search
+                </span>
+            </button>
+        </form>
+
+        <a class="info md-18" onclick="show_side_block()">
+            <span class="material-icons-outlined">
+                info
+            </span>
+        </a>
+
+    </div>
+
+    <div class="side_block">
+        <p class="side_block_text">
+            Это веб-клиент приложения для поиска расписаний учебных
+            групп Белорусского Государственного Медицинского
+            Университета.
+            <br>
+            <br>
+            Для того, чтобы найти необходимое Вам расписание
+            достаточно в поле поиска ввести номер вашей группы и
+            нажать Enter или на кнопку поиска. Если Ваша группа
+            находится в базе, будет выведено расписание для
+            введенной группы на две недели вперед.
+        </p>
+
+        <p class="side_block_text">
+            Приложение находится в разработке (!)
+            <br>
+            А это значит, что, вероятно, не все группы добавлены в базу.
+            Если Вы студент БГМУ и хотите помочь приложению
+            (добавить расписание / сообщить об ошибке / другая причина), то по
+            <a href="#" class="side_block_link">этой</a> ссылке можно
+            связаться с разработчиками.
+            <br>
+            <br>
+            Над сервисом работали студенты БГУИР
+            Хомяков И. (back-end),
+            Драцевич К. (android приложение) и
+            Рогожников Д. (дизайн)
+            <br>
+            BSMU JOURNAL, 2021
+        </p>
+    </div>
+
+
+    <script src="{% static "js/main.js" %}"></script>
 </body>
 </html>
