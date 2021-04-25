@@ -1,0 +1,439 @@
+{
+  "commentSection": {
+    "comment": "0 - каждая неделя, 1 - нечетная, 2 - четная"
+  },
+
+  "studentGroup": {
+    "groupNumber": "8105",
+    "facultyName": "Фармацевтический факультет",
+    "course": 1
+  },
+
+  "tables": {
+    "weekDay": {
+
+      "Понедельник": {
+        "lessonList": [
+          {
+            "subject": "Общая и неорганическая химия",
+            "subjectType": "ЛК",
+            "weekType": 2,
+            "specialDays": [],
+            "auditory": "",
+            "startLessonTime": "",
+            "endLessonTime": "",
+            "employee": {
+              "fullName": "Иванов Иван Иванович",
+              "fio": "Иванов И. И."
+            },
+            "note": "На ДО"
+          },
+
+          {
+            "subject": "Великая Отечественная Война",
+            "subjectType": "ЛК",
+            "weekType": 1,
+            "specialDays": [],
+            "auditory": "",
+            "startLessonTime": "",
+            "endLessonTime": "",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": "На ДО"
+          },
+
+          {
+            "subject": "Анатомия и физиология человека",
+            "subjectType": "ПЗ",
+            "weekType": 0,
+            "specialDays": [],
+            "auditory": "null",
+            "startLessonTime": "9:00",
+            "endLessonTime": "11:30",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": ""
+          },
+
+          {
+            "subject": "Фарм. латынь",
+            "subjectType": "ПЗ",
+            "weekType": 2,
+            "specialDays": [],
+            "auditory": "null",
+            "startLessonTime": "13:30",
+            "endLessonTime": "15:05",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": ""
+          }
+        ]
+      },
+
+      "Вторник": {
+        "lessonList": [
+          {
+            "subject": "Фарм. ботаника",
+            "subjectType": "ЛК",
+            "weekType": 2,
+            "specialDays": [],
+            "auditory": "",
+            "startLessonTime": "",
+            "endLessonTime": "",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": "На ДО"
+          },
+
+          {
+            "subject": "Анатомия и физиология человека",
+            "subjectType": "ЛК",
+            "weekType": 1,
+            "specialDays": [],
+            "auditory": "",
+            "startLessonTime": "",
+            "endLessonTime": "",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": "На ДО"
+          },
+
+          {
+            "subject": "Фарм. ботаника",
+            "subjectType": "ПЗ",
+            "weekType": 0,
+            "specialDays": [],
+            "auditory": "null",
+            "startLessonTime": "9:50",
+            "endLessonTime": "12:20",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": ""
+          },
+
+          {
+            "subject": "Биологическая физика",
+            "subjectType": "ПЗ",
+            "weekType": 0,
+            "specialDays": [],
+            "auditory": "null",
+            "startLessonTime": "13:30",
+            "endLessonTime": "16:00",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": ""
+          }
+
+        ]
+      },
+
+      "Среда": {
+        "lessonList": [
+          {
+            "subject": "Политология",
+            "subjectType": "ЛК",
+            "weekType": null,
+            "specialDays": [ "17.02", "17.03", "14.04", "15.05" ],
+            "auditory": "",
+            "startLessonTime": "",
+            "endLessonTime": "",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": "На ДО"
+          },
+
+          {
+            "subject": "ОИБГ",
+            "subjectType": "ЛК",
+            "weekType": null,
+            "specialDays": [ "03.03", "31.03", "28.04", "26.05" ],
+            "auditory": "",
+            "startLessonTime": "",
+            "endLessonTime": "",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": "На ДО"
+          },
+
+          {
+            "subject": "Права человека",
+            "subjectType": "ЛК",
+            "weekType": 1,
+            "specialDays": [],
+            "auditory": "",
+            "startLessonTime": "",
+            "endLessonTime": "",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": "На ДО"
+          },
+
+          {
+            "subject": "Фарм. латынь",
+            "subjectType": "ПЗ",
+            "weekType": 0,
+            "specialDays": [],
+            "auditory": "null",
+            "startLessonTime": "8:00",
+            "endLessonTime": "9:35",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": ""
+          },
+
+          {
+            "subject": "Великая Отечественная Война",
+            "subjectType": "ПЗ",
+            "weekType": 1,
+            "specialDays": [],
+            "auditory": "null",
+            "startLessonTime": "9:55",
+            "endLessonTime": "11:30",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": ""
+          },
+
+          {
+            "subject": "Права человека",
+            "subjectType": "ПЗ",
+            "weekType": 2,
+            "specialDays": [],
+            "auditory": "null",
+            "startLessonTime": "9:55",
+            "endLessonTime": "11:30",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": ""
+          },
+
+          {
+            "subject": "Физичекая культура",
+            "subjectType": "",
+            "weekType": 0,
+            "specialDays": [],
+            "auditory": "",
+            "startLessonTime": "11:45",
+            "endLessonTime": "13:20",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": ""
+          }
+        ]
+      },
+
+
+      "Четверг": {
+        "lessonList": [
+          {
+            "subject": "Биологичекая физика",
+            "subjectType": "ЛК",
+            "weekType": 2,
+            "specialDays": [],
+            "auditory": "",
+            "startLessonTime": "",
+            "endLessonTime": "",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": "На ДО"
+          },
+
+          {
+            "subject": "Медицинская информатика",
+            "subjectType": "ЛК",
+            "weekType": null,
+            "specialDays": [ "18.02", "04.03" ],
+            "auditory": "",
+            "startLessonTime": "",
+            "endLessonTime": "",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": "На ДО"
+          },
+
+          {
+            "subject": "Фармацевтичекая ботаника",
+            "subjectType": "ЛК",
+            "weekType": null,
+            "specialDays": [ "22.04", "13.05" ],
+            "auditory": "",
+            "startLessonTime": "",
+            "endLessonTime": "",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": "На ДО"
+          },
+
+          {
+            "subject": "Общая и неорганичекая химия",
+            "subjectType": "ЛК",
+            "weekType": null,
+            "specialDays": [ "06.05" ],
+            "auditory": "",
+            "startLessonTime": "",
+            "endLessonTime": "",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": "На ДО"
+          },
+
+          {
+            "subject": "Великая Отечественная Война",
+            "subjectType": "ЛК",
+            "weekType": null,
+            "specialDays": [ "18.03" ],
+            "auditory": "",
+            "startLessonTime": "",
+            "endLessonTime": "",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": "На ДО"
+          },
+
+          {
+            "subject": "Общая и неорганическая химия",
+            "subjectType": "ПЗ",
+            "weekType": 0,
+            "specialDays": [],
+            "auditory": "null",
+            "startLessonTime": "10:45",
+            "endLessonTime": "13:15",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": ""
+          },
+
+          {
+            "subject": "Иностранный язык",
+            "subjectType": "ПЗ",
+            "weekType": 0,
+            "specialDays": "",
+            "auditory": "null",
+            "startLessonTime": "13:35",
+            "endLessonTime": "15:10",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": ""
+          }
+        ]
+      },
+
+      "Пятница": {
+        "lessonList": [
+          {
+            "subject": "Политология",
+            "subjectType": "ПЗ",
+            "weekType": 2,
+            "specialDays": [],
+            "auditory": "null",
+            "startLessonTime": "8:00",
+            "endLessonTime": "9:35",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": ""
+          },
+
+          {
+            "subject": "ОИБГ",
+            "subjectType": "ПЗ",
+            "weekType": 1,
+            "specialDays": [],
+            "auditory": "null",
+            "startLessonTime": "9:55",
+            "endLessonTime": "11:30",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": ""
+          },
+
+          {
+            "subject": "Белорусский язык",
+            "subjectType": "ПЗ",
+            "weekType": 0,
+            "specialDays": [],
+            "auditory": "null",
+            "startLessonTime": "11:40",
+            "endLessonTime": "13:15",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": ""
+          },
+
+          {
+            "subject": "Медицинская информатика",
+            "subjectType": "ПЗ",
+            "weekType": 0,
+            "specialDays": [],
+            "auditory": "null",
+            "startLessonTime": "13:35",
+            "endLessonTime": "16:05",
+            "employee": {
+              "fio": "Иванов И. И.",
+              "fullName": "Иванов Иван Иванович"
+            },
+            "note": ""
+          }
+        ]
+      },
+
+      "semesterDateStart": "08.02.2021",
+      "semesterDateEnd": "11.06.2021",
+      "firstWeekType": 1,
+      "isSessionStart": false,
+      "sessionEnd": false,
+      "examSchedules": [],
+      "educationalPracticeStart": "28.06.2021",
+      "educationalPracticeEnd": "02.07.2021",
+      "holidaysStart": "03.07.2021",
+      "holidaysEnd": "31.08.2021"
+    }
+  }
+}
