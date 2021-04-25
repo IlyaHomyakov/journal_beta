@@ -14,7 +14,7 @@
 <body>
     <div class="content">
         <p id="title">РАСПИСАНИЕ БГМУ</p>
-        <p id="week_type_today">сегодня, 18 апреля, четная неделя</p>
+        <p id="week_type_today">сегодня {{ today_day }}.{{ today_month }}, четная неделя</p>
 
         <form class="search_box">
             <input placeholder="НАЙТИ ГРУППУ" class="search_input">
@@ -25,7 +25,7 @@
             </button>
         </form>
 
-        <a class="info md-18" onclick="show_side_block()">
+        <a class="info" onclick="show_side_block()">
             <span class="material-icons-outlined">
                 info
             </span>

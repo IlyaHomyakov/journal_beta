@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Group, GroupLesson
+from .models import *
 
 
 class InLineGroupLesson(admin.TabularInline):
@@ -23,3 +23,6 @@ class GroupAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Group, GroupAdmin)
+
+
+admin.site.register(SemesterOptions)

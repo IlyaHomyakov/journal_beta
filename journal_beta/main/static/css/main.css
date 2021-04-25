@@ -13,7 +13,7 @@
 @media screen and (max-device-width: 1600px) and (min-device-width: 1280px){
 
     body{
-        background: rgba(0, 0, 0, 0.01);
+        background: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -40,9 +40,7 @@
         margin: 24px 0 0 0;
         text-shadow: rgba(0,0,0,0.2) 0 0 2px;
     }
-    /*.search_form{*/
-    /**/
-    /*}*/
+
     .search_box{
         display: flex;
         flex-direction: row;
@@ -60,6 +58,7 @@
         padding: 0 0 0 20px;
         margin: 100px 0 0 0;
     }
+
     .search_input:hover,
     .search_input:focus{
         box-shadow: rgba(0,0,0,0.5) 0 0 2px;

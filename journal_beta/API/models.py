@@ -114,3 +114,27 @@ class GroupLesson(models.Model):
         return self.subject
 
 
+class SemesterOptions(models.Model):
+
+    semester_start = models.DateField('Начало семестра')
+
+    server_week_type_choices = [
+        ('1', 'Нечетная'),
+        ('2', 'Четная'),
+    ]
+    server_week_type_choice = models.CharField(
+        'Тип первой учебной недели',
+        default='1',
+        choices=server_week_type_choices,
+        max_length=1,
+        help_text='Тип недели обязательное значение'
+    )
+
+    semester_end = models.DateField('Конец семестра')
+
+    def __str__(self):
+        return 'Настройки семестра'
+
+    class Meta:
+        verbose_name_plural = 'Настройки семестра'
+        verbose_name = 'Настройки семестра'
