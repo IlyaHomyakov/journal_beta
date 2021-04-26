@@ -6,8 +6,7 @@ import requests
 def main_page(request):
     today_day = datetime.today().date().day
     today_month = datetime.today().date().month
-
-    today_week_type = requests.get('http://127.0.0.1:8000/api/weektype/').json()
+    today_week_type = requests.get('http://192.168.100.68:8080/api/weektype/').json()  # IP сервера !
     if today_week_type['currentWeekType'] == 1:
         today_week_type = ', нечетная неделя'
     elif today_week_type['currentWeekType'] == 2:
