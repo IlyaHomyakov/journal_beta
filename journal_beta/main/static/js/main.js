@@ -18,3 +18,10 @@ function show_side_block(){
             '</span>'
     }
 }
+
+if (screen.orientation.type === 'portrait-primary'){
+    let side_block = document.getElementsByClassName('side_block')[0];
+    let side_block_styles = getComputedStyle(side_block);
+    console.log(window.innerHeight)
+    side_block.style.setProperty('height', window.innerHeight - 100 + 'px');
+}
