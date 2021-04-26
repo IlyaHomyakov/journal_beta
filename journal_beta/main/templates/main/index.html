@@ -8,16 +8,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>journal</title>
     <link rel="stylesheet" href="{% static "css/main.css" %}">
+    <link rel="stylesheet" href="{% static "css/mobile.css" %}">
 {#    <link href="title"main#}
 {#      rel="stylesheet">#}
 </head>
 <body>
     <div class="content">
-        <p id="title">РАСПИСАНИЕ БГМУ</p>
+        <p id="title">
+            <a href="" class="title_link">РАСПИСАНИЕ БГМУ</a>
+        </p>
         <p id="week_type_today">сегодня {{ today_day }}.{{ today_month }}{{ today_week_type }}</p>
 
         <form class="search_box">
-            <input placeholder="НАЙТИ ГРУППУ" class="search_input">
+            <input placeholder="НОМЕР ГРУППЫ" class="search_input">
             <button class="search_btn">
                 <span class="material-icons">
                     search
@@ -36,8 +39,8 @@
     <div class="side_block">
         <p class="side_block_text">
             Это веб-клиент приложения для поиска расписаний учебных
-            групп Белорусского Государственного Медицинского
-            Университета.
+            групп <a href="https://www.bsmu.by/" class="side_block_link" target="_blank">Белорусского Государственного Медицинского
+            Университета</a>.
             <br>
             <br>
             Для того, чтобы найти необходимое Вам расписание
