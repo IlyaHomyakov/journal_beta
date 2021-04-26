@@ -21,7 +21,8 @@ function show_side_block(){
 
 if (screen.orientation.type === 'portrait-primary'){
     let side_block = document.getElementsByClassName('side_block')[0];
-    let side_block_styles = getComputedStyle(side_block);
+    let body = document.getElementsByTagName('body')[0]
     console.log(window.innerHeight)
     side_block.style.setProperty('height', window.innerHeight - 100 + 'px');
+    // body.style.setProperty('height', window.innerHeight + 'px')
 }
