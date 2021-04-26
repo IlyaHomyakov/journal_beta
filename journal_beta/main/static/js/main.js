@@ -1,5 +1,3 @@
-// alert("HELLO");
-
 function show_side_block(){
     let side_block = document.getElementsByClassName('side_block')[0];
     let info = document.getElementsByClassName('info')[0];
@@ -19,5 +17,4 @@ function show_side_block(){
             '    info\n' +
             '</span>'
     }
-
 }
