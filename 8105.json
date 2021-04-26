@@ -426,7 +426,7 @@
 
       "semesterDateStart": "08.02.2021",
       "semesterDateEnd": "11.06.2021",
-      "firstWeekType": 1,
+      "currentWeekType": 1,
       "isSessionStart": false,
       "sessionEnd": false,
       "examSchedules": [],
