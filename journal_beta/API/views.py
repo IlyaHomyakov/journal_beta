@@ -4,12 +4,48 @@ import json
 from django.http import HttpResponse, HttpResponseNotFound, JsonResponse
 from .models import SemesterOptions, Group, GroupLesson
 from django.shortcuts import get_object_or_404
-from . import return_group_json_template
 
 
 def get_group_schedule(request, got_group_number):
     get_object_or_404(Group, group_number=got_group_number)
-    return_group_table_data = return_group_json_template.return_data
+    return_group_table_data = {
+        "studentGroup": {
+            "groupNumber": None,
+            "facultyName": None,
+            "course": None,
+        },
+
+        "tables": {
+            "weekDay": {
+                "Понедельник": {
+                    "lessonList": [
+
+                    ]
+                },
+                "Вторник": {
+                    "lessonList": [
+
+                    ]
+                },
+                "Среда": {
+                    "lessonList": [
+
+                    ]
+                },
+                "Четверг": {
+                    "lessonList": [
+
+                    ]
+                },
+                "Пятница": {
+                    "lessonList": [
+
+                    ]
+                },
+            }
+        }
+    }
+
     faculty_name = Group.objects.filter(group_number=got_group_number).values('faculty_choice').get()['faculty_choice']
     course = Group.objects.filter(group_number=got_group_number).values('course_choice').get()['course_choice']
 
@@ -17,15 +53,32 @@ def get_group_schedule(request, got_group_number):
 
     group_table = GroupLesson.objects.filter(group_id_connector=group_id).values()
 
-    return_group_table_data['studentGroup']['groupNumber'] = int(got_group_number)
+    return_group_table_data['studentGroup']['groupNumber'] = got_group_number
     return_group_table_data['studentGroup']['facultyName'] = faculty_name
-    return_group_table_data['studentGroup']['course'] = int(course)
-    for x in range(len(group_table)):
-    #     if 'Понедельник' in group_table[x].values() and 'Понедельник' not in return_group_table_data['tables']['weekDay']:
-        print(x)
+    return_group_table_data['studentGroup']['course'] = course
+    for i in range(len(group_table)):
+        # print(return_group_table_data['tables']['weekDay']['Понедельник'])
+        # if group_table[i]['week_day_choice'] in return_group_table_data['tables']['weekDay']:
+        # print(inner_lesson_list['subject'])
+        inner_lesson_list = {
+            "subject": group_table[i]['subject'],
+            "subjectType": group_table[i]['lesson_type_choice'],
+            "weekType": group_table[i]['week_type_choice'],
+            "specialDays": group_table[i]['special_days'],
+            "auditory": group_table[i]['auditory'],
+            "startLessonTime": group_table[i]['start_lesson_time'],
+            "endLessonTime": group_table[i]['end_lesson_time'],
+            "employee": {
+                "fullName": group_table[i]['employee_full_name'],
+                # "fio": None
+            },
+            "note": group_table[i]['note']
+        }
+        return_group_table_data['tables']['weekDay'][group_table[i]['week_day_choice']]['lessonList']\
+            .append(inner_lesson_list)
 
-    # return JsonResponse(return_group_table_data)
-    return HttpResponse(group_table.values())
+    return JsonResponse(return_group_table_data)
+    # return HttpResponse(group_table[0]['week_day_choice'])
 
 
 def week_type(request):
