@@ -14,34 +14,34 @@ def get_group_schedule(request, got_group_number):
             "facultyName": None,
             "course": None,
         },
-
         "tables": {
             "weekDay": {
                 "Понедельник": {
-                    "lessonList": [
-
-                    ]
+                    "lessonList": []
                 },
                 "Вторник": {
-                    "lessonList": [
-
-                    ]
+                    "lessonList": []
                 },
                 "Среда": {
-                    "lessonList": [
-
-                    ]
+                    "lessonList": []
                 },
                 "Четверг": {
-                    "lessonList": [
-
-                    ]
+                    "lessonList": []
                 },
                 "Пятница": {
-                    "lessonList": [
-
-                    ]
+                    "lessonList": []
                 },
+                "semesterStartDate": None,
+                "semesterEndDate": None,
+                "currentWeekType": None,
+                "isSessionStart": False,
+                "sessionStartDate": None,
+                "sessionEndDate": None,
+                "examSchedules": [],
+                "educationalPracticeStart": "28.06.2021",
+                "educationalPracticeEnd": "02.07.2021",
+                "holidaysStart": "03.07.2021",
+                "holidaysEnd": "31.08.2021"
             }
         }
     }
@@ -74,7 +74,7 @@ def get_group_schedule(request, got_group_number):
             },
             "note": group_table[i]['note']
         }
-        return_group_table_data['tables']['weekDay'][group_table[i]['week_day_choice']]['lessonList']\
+        return_group_table_data['tables']['weekDay'][group_table[i]['week_day_choice']]['lessonList'] \
             .append(inner_lesson_list)
 
     return JsonResponse(return_group_table_data)
