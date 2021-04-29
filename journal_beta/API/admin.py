@@ -3,7 +3,7 @@ from django.contrib import admin
 from .models import *
 
 
-class InLineGroupLesson(admin.TabularInline):
+class InLineGroupLesson(admin.StackedInline):
     model = GroupLesson
     extra = 0
 
@@ -17,6 +17,16 @@ class GroupAdmin(admin.ModelAdmin):
                 'group_number',
                 'faculty_choice',
                 'course_choice',
+                'semester_start_date',
+                'semester_end_date',
+                'group_week_type_choice',
+                # 'is_week_type_needed',
+                'session_start_date',
+                'session_end_date',
+                'educational_practice_start_date',
+                'educational_practice_end_date',
+                'holidays_start_date',
+                'holidays_end_date',
             )
         }),
     )
@@ -25,4 +35,4 @@ class GroupAdmin(admin.ModelAdmin):
 admin.site.register(Group, GroupAdmin)
 
 
-admin.site.register(SemesterOptions)
+# admin.site.register(SemesterOptions)
