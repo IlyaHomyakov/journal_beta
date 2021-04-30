@@ -1,6 +1,6 @@
 import datetime
-from django.http import HttpResponse, HttpResponseNotFound, JsonResponse
-from .models import SemesterOptions, Group, GroupLesson
+from django.http import JsonResponse
+from .models import Group, GroupLesson
 from django.shortcuts import get_object_or_404
 
 
@@ -119,7 +119,6 @@ def get_group_schedule(request, got_group_number):
             .append(inner_lesson_list)
 
     return JsonResponse(return_group_table_data)
-    # return HttpResponse(group_table[0]['week_day_choice'])
 
 
 def week_type(request):

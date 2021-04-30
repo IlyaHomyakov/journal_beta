@@ -1,5 +1,4 @@
 from django.db import models
-from datetime import datetime
 
 
 class Group(models.Model):
@@ -58,7 +57,6 @@ class Group(models.Model):
         choices=group_week_type_choices,
         max_length=1,
     )
-    # is_week_type_needed = models.BooleanField(verbose_name='Учитывается ли четность недели?')
 
     session_start_date = models.DateField(verbose_name='Начало экзаменов')
     session_end_date = models.DateField(verbose_name='Конец экзаменов')
@@ -138,29 +136,3 @@ class GroupLesson(models.Model):
 
     def __str__(self):
         return self.subject
-
-
-class SemesterOptions(models.Model):
-
-    # semester_start = models.DateField('Начало семестра')
-
-    # server_week_type_choices = [
-    #     ('1', 'Нечетная'),
-    #     ('2', 'Четная'),
-    # ]
-    # server_week_type_choice = models.CharField(
-    #     'Тип текущей учебной недели',
-    #     default='1',
-    #     choices=server_week_type_choices,
-    #     max_length=1,
-    #     help_text='Тип недели обязательное значение'
-    # )
-
-    # semester_end = models.DateField('Конец семестра')
-
-    def __str__(self):
-        return 'Настройки семестра'
-
-    class Meta:
-        verbose_name_plural = 'Настройки семестра'
-        verbose_name = 'Настройки семестра'

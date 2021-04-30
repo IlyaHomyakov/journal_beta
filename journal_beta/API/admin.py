@@ -20,7 +20,6 @@ class GroupAdmin(admin.ModelAdmin):
                 'semester_start_date',
                 'semester_end_date',
                 'group_week_type_choice',
-                # 'is_week_type_needed',
                 'session_start_date',
                 'session_end_date',
                 'educational_practice_start_date',
@@ -33,6 +32,3 @@ class GroupAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Group, GroupAdmin)
-
-
-# admin.site.register(SemesterOptions)
