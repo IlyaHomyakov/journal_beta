@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Group(models.Model):
-    group_number = models.CharField('Номер группы', max_length=10)
+    groupNumber = models.CharField('Номер группы', max_length=10)
 
     lech = 'Лечебный'
     med_prof = 'Медико-профилактический'
@@ -13,7 +13,7 @@ class Group(models.Model):
     farm = 'Фармацевтический'
     profor = 'Профориентации и довузовской подготовки'
     fac_pov_kv = 'Факультет повышения квалификации и переподготовки кадров'
-    faculties_choices = [
+    facultiesChoices = [
         (lech, 'Лечебный'),
         (med_prof, 'Медико-профилактический'),
         (ped, 'Педиатрический'),
@@ -24,13 +24,13 @@ class Group(models.Model):
         (profor, 'Профориентации и довузовской подготовки'),
         (fac_pov_kv, 'Факультет повышения квалификации и переподготовки кадров'),
     ]
-    faculty_choice = models.CharField(
+    facultyChoice = models.CharField(
         'Факультет',
         max_length=75,
-        choices=faculties_choices
+        choices=facultiesChoices
     )
 
-    course_choices = [
+    courseChoices = [
         ('1', '1'),
         ('2', '2'),
         ('3', '3'),
@@ -38,37 +38,38 @@ class Group(models.Model):
         ('5', '5'),
         ('6', '6'),
     ]
-    course_choice = models.CharField(
+    courseChoice = models.CharField(
         'Курс',
         max_length=10,
-        choices=course_choices,
+        choices=courseChoices,
     )
 
-    semester_start_date = models.DateField(verbose_name='Начало семестра')
-    semester_end_date = models.DateField(verbose_name='Конец семестра')
-    group_week_type_choices = [
+    semesterStartDate = models.DateField(verbose_name='Начало семестра')
+    semesterEndDate = models.DateField(verbose_name='Конец семестра')
+
+    groupWeekTypeChoices = [
         ('1', 'Нечетная'),
         ('2', 'Четная'),
-        (None, 'Не учитывать'),
+        ('-1', 'Не учитывать'),
     ]
-    group_week_type_choice = models.CharField(
+    groupWeekTypeChoice = models.CharField(
         'Тип первой учебной недели',
         default=None,
-        choices=group_week_type_choices,
-        max_length=1,
+        choices=groupWeekTypeChoices,
+        max_length=2,
     )
 
-    session_start_date = models.DateField(verbose_name='Начало экзаменов')
-    session_end_date = models.DateField(verbose_name='Конец экзаменов')
+    sessionStartDate = models.DateField(verbose_name='Начало экзаменов')
+    sessionEndDate = models.DateField(verbose_name='Конец экзаменов')
 
-    educational_practice_start_date = models.DateField(verbose_name='Начало учебной практики')
-    educational_practice_end_date = models.DateField(verbose_name='Конец учебной практики')
+    educationalPracticeStartDate = models.DateField(verbose_name='Начало учебной практики')
+    educationalPracticeEndDate = models.DateField(verbose_name='Конец учебной практики')
 
-    holidays_start_date = models.DateField(verbose_name='Начало каникул')
-    holidays_end_date = models.DateField(verbose_name='Конец каникул')
+    holidaysStartDate = models.DateField(verbose_name='Начало каникул')
+    holidaysEndDate = models.DateField(verbose_name='Конец каникул')
 
     def __str__(self):
-        return self.group_number
+        return self.groupNumber
 
     class Meta:
         verbose_name_plural = 'Группы'
@@ -76,9 +77,9 @@ class Group(models.Model):
 
 
 class GroupLesson(models.Model):
-    group_id_connector = models.ForeignKey(Group, on_delete=models.CASCADE)
+    groupIdConnector = models.ForeignKey(Group, on_delete=models.CASCADE)
 
-    week_day_choices = [
+    weekDayChoices = [
         ('Понедельник', 'Понедельник'),
         ('Вторник', 'Вторник'),
         ('Среда', 'Среда'),
@@ -87,9 +88,9 @@ class GroupLesson(models.Model):
         ('Суббота', 'Суббота'),
         ('Воскресение', 'Воскресение'),
     ]
-    week_day_choice = models.CharField(
+    weekDayChoices = models.CharField(
         'День недели',
-        choices=week_day_choices,
+        choices=weekDayChoices,
         max_length=100
     )
 
@@ -98,36 +99,36 @@ class GroupLesson(models.Model):
         max_length=100,
     )
 
-    lesson_type_choices = [
+    lessonTypeChoices = [
         ('ЛК', 'Лекция'),
         ('ПЗ', 'Практическое'),
         (' ', 'Не указывать')
     ]
-    lesson_type_choice = models.CharField(
+    lessonTypeChoice = models.CharField(
         'Тип занятия',
-        choices=lesson_type_choices,
+        choices=lessonTypeChoices,
         max_length=100
     )
 
-    week_type_choices = [
+    weekTypeChoices = [
         ('0', 'Каждая'),
         ('1', 'Нечетная'),
         ('2', 'Четная'),
         ('-1', 'Иная')
     ]
-    week_type_choice = models.CharField(
+    weekTypeChoice = models.CharField(
         'Тип недели',
-        choices=week_type_choices,
+        choices=weekTypeChoices,
         max_length=100,
     )
 
-    special_days = models.CharField('Отдельные дни', max_length=100, blank=True,
-                                    help_text='Если занятие проводится по отдельным датам. '
-                                              'Например, <b>18.09 15.10 16.11</b>')
+    specialDays = models.CharField('Отдельные дни', max_length=100, blank=True,
+                                   help_text='Если занятие проводится по отдельным датам. '
+                                             'Например, <b>18.09 15.10 16.11</b>')
     auditory = models.CharField('Аудитория', max_length=10, blank=True)
-    start_lesson_time = models.TimeField('Время начала пары')
-    end_lesson_time = models.TimeField('Время конца пары')
-    employee_full_name = models.CharField('Преподаватель (ФИО полностью)', max_length=100, blank=True)
+    startLessonTime = models.TimeField('Время начала пары')
+    endLessonTime = models.TimeField('Время конца пары')
+    employeeFullName = models.CharField('Преподаватель (ФИО полностью)', max_length=100, blank=True)
     note = models.CharField('Примечание', max_length=100, blank=True)
 
     class Meta:

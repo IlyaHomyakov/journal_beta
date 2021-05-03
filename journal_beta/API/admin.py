@@ -10,22 +10,22 @@ class InLineGroupLesson(admin.StackedInline):
 
 class GroupAdmin(admin.ModelAdmin):
     inlines = [InLineGroupLesson]
-    list_display = ('group_number', 'faculty_choice', 'course_choice')
+    list_display = ('groupNumber', 'facultyChoice', 'courseChoice')
     fieldsets = (
         (None, {
             'fields': (
-                'group_number',
-                'faculty_choice',
-                'course_choice',
-                'semester_start_date',
-                'semester_end_date',
-                'group_week_type_choice',
-                'session_start_date',
-                'session_end_date',
-                'educational_practice_start_date',
-                'educational_practice_end_date',
-                'holidays_start_date',
-                'holidays_end_date',
+                'groupNumber',
+                'facultyChoice',
+                'courseChoice',
+                'semesterStartDate',
+                'semesterEndDate',
+                'groupWeekTypeChoice',
+                'sessionStartDate',
+                'sessionEndDate',
+                'educationalPracticeStartDate',
+                'educationalPracticeEndDate',
+                'holidaysStartDate',
+                'holidaysEndDate',
             )
         }),
     )
