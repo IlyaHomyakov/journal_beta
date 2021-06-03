@@ -1,21 +1,9 @@
+{% extends 'main/main_template.html' %}
 {% load static %}
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Расписание БГМУ</title>
-    <link rel="stylesheet" href="{% static "css/main.css" %}">
-    <link rel="stylesheet" href="{% static "css/mobile.css" %}">
-{#    <link href="title"main#}
-{#      rel="stylesheet">#}
-</head>
-<body>
+{% block content %}
     <div class="content">
         <p id="title">
-            <a href="" class="title_link">РАСПИСАНИЕ БГМУ</a>
+            <a href="" class="title_link">{{ title }}</a>
         </p>
         <p id="week_type_today">сегодня {{ today_date }}</p>
 
@@ -35,41 +23,13 @@
         </a>
 
     </div>
-
     <div class="side_block">
         <p class="side_block_text">
-            Это веб-клиент приложения для поиска расписаний учебных
-            групп <a href="https://www.bsmu.by/" class="side_block_link" target="_blank">Белорусского Государственного Медицинского
-            Университета</a>.
-            <br>
-            <br>
-            Для того, чтобы найти необходимое Вам расписание
-            достаточно в поле поиска ввести номер вашей группы и
-            нажать Enter или на кнопку поиска. Если Ваша группа
-            находится в базе, будет выведено расписание для
-            введенной группы на две недели вперед.
+            {% autoescape on %}
+                {{ help_text|safe }}
+            {% endautoescape %}
         </p>
 
-        <p class="side_block_text">
-            Приложение находится в разработке (!)
-            <br>
-            А это значит, что, вероятно, не все группы добавлены в базу.
-            Если Вы студент БГМУ и хотите помочь приложению
-            (добавить расписание / сообщить об ошибке / другая причина), то по
-            <a href="#" class="side_block_link">этой</a> ссылке можно
-            связаться с разработчиками.
-            <br>
-            <br>
-            Над сервисом работали студенты БГУИР
-            Хомяков И. (back-end),
-            Драцевич К. (android приложение) и
-            Рогожников Д. (дизайн)
-            <br>
-            BSMU JOURNAL, 2021
-        </p>
     </div>
 
-
-    <script src="{% static "js/main.js" %}"></script>
-</body>
-</html>
+{% endblock %}

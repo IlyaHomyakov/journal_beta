@@ -1,5 +1,5 @@
 import datetime
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from .models import Group, GroupLesson
 from django.shortcuts import get_object_or_404
 
@@ -101,7 +101,6 @@ def get_group_schedule(request, got_group_number):
             "subject": groupTable[i]['subject'],
             "subjectType": groupTable[i]['lessonTypeChoice'],
             "weekType": groupTable[i]['weekTypeChoice'],
-            "specialDays": groupTable[i]['specialDays'],
             "auditory": groupTable[i]['auditory'],
             "startLessonTime": groupTable[i]['startLessonTime'],
             "endLessonTime": groupTable[i]['endLessonTime'],
@@ -115,3 +114,15 @@ def get_group_schedule(request, got_group_number):
             .append(inner_lesson_list)
 
     return JsonResponse(return_group_table_data)
+
+
+def get_group_list(request):
+    return_data = {
+        "groupsList": []
+    }
+    test_ = Group.objects.filter().values('groupNumber')
+    for i in range(len(test_)):
+        group_num = Group.objects.filter().values('groupNumber')[i].get('groupNumber')
+        return_data['groupsList'].append(group_num)
+    return JsonResponse(return_data)
+    # return HttpResponse(return_data)

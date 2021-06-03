@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-g*)#y=vnfwg=1i#vwkpoh3ou$5*7ngf@o%-67-qm5g1%vckxh2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []  # это нужно для запуска в сети
+ALLOWED_HOSTS = ['https://bsmujournal.herokuapp.com/ ']  # это нужно для запуска в сети
 
 # Application definition
 
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'journal_beta.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd9qvldo4k2ui0g',
+        'USER': 'mrbvoyndzdpgxg',
+        'PASSWORD': '9583c36474e22689b9173e08501208074e9e20fc1986c4360676d51b7e8aeb74',
+        'HOST': 'ec2-3-234-22-132.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -115,7 +120,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -124,3 +130,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 TIME_INPUT_FORMATS = ('%H:%M',)
+django_heroku.settings(locals())

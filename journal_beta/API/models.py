@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 
 
 class Group(models.Model):
@@ -12,7 +13,7 @@ class Group(models.Model):
     inostr = 'Иностранных учащихся'
     farm = 'Фармацевтический'
     profor = 'Профориентации и довузовской подготовки'
-    fac_pov_kv = 'Факультет повышения квалификации и переподготовки кадров'
+    fac_pov_kv = 'Повышения квалификации и переподготовки кадров'
     facultiesChoices = [
         (lech, 'Лечебный'),
         (med_prof, 'Медико-профилактический'),
@@ -22,7 +23,7 @@ class Group(models.Model):
         (inostr, 'Иностранных учащихся'),
         (farm, 'Фармацевтический'),
         (profor, 'Профориентации и довузовской подготовки'),
-        (fac_pov_kv, 'Факультет повышения квалификации и переподготовки кадров'),
+        (fac_pov_kv, 'Повышения квалификации и переподготовки кадров'),
     ]
     facultyChoice = models.CharField(
         'Факультет',
@@ -122,9 +123,6 @@ class GroupLesson(models.Model):
         max_length=100,
     )
 
-    specialDays = models.CharField('Отдельные дни', max_length=100, blank=True,
-                                   help_text='Если занятие проводится по отдельным датам. '
-                                             'Например, <b>18.09 15.10 16.11</b>')
     auditory = models.CharField('Аудитория', max_length=10, blank=True)
     startLessonTime = models.TimeField('Время начала пары')
     endLessonTime = models.TimeField('Время конца пары')
