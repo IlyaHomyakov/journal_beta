@@ -6,5 +6,10 @@
       <auth-provider>no-auth</auth-provider>
       <schema-mapping />
     </data-source>
+    <data-source name="Django default" uuid="ec74a705-9b25-400b-b60c-607f248995b3">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>mrbvoyndzdpgxg</user-name>
+      <schema-mapping />
+    </data-source>
   </component>
 </project>
